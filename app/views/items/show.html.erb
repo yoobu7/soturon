@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container, clearfix">
+  <table class="table table-striped">
+    <tr>
+      <td class="col-sm-2"><strong>Name</strong></td>
+      <td class="col-sm-6"><%= @item.name %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Hurigana</strong>
+      <td><%= @item.hurigana %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Date</strong></td>
+      <td><%= @item.date %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Bunrui</strong></td>
+      <td><%= @item.bunrui %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Bangou</strong></td>
+      <td><%= @item.bangou %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Gozyuon</strong></td>
+      <td><%= @item.gozyuon %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Tag</strong></td>
+      <td><%= render "items/tag_list", tag_list: @item.tag_list %></td>
+    </tr>
+
+  </table>
+</div>
+
+
+
+
+
+<%= image_tag(@item.picture_url, width: 200) if @item.picture.present? %>
+
+</br>
+</br>
+<%= link_to edit_item_path(@item) do %><span class="fa fa-pencil"></span><% end %> |
+<%= link_to 'Back', items_path %>
+
+</br>

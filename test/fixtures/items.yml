@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  hurigana: MyString
+  date: 2015-06-26
+  bunrui: MyString
+  bangou: MyString
+  gozyuon: MyString
+
+two:
+  name: MyString
+  hurigana: MyString
+  date: 2015-06-26
+  bunrui: MyString
+  bangou: MyString
+  gozyuon: MyString

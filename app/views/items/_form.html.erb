@@ -1,0 +1,59 @@
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :hurigana %><br>
+    <%= f.text_field :hurigana %>
+    <script type="text/javascript">
+      $(document).ready(
+          function() {
+              $.fn.autoKana('#item_name', '#item_hurigana', {
+                  katakana : true  //true：カタカナ、false：ひらがな（デフォルト）
+          });
+      });
+    </script>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :bunrui %><br>
+    <%= f.text_field :bunrui %>
+  </div>
+  <div class="field">
+    <%= f.label :bangou %><br>
+    <%= f.text_field :bangou %>
+
+  </div>
+  <div class="field">
+    <%= f.label :gozyuon %><br>
+    <%= f.text_field :gozyuon %>
+  </div>
+  <div class="field">
+    <%= f.label :tag_list %><br>
+    <%= text_field_tag 'item[tag_list]', @item.tag_list.join(','), "data-role" => "tagsinput" %>
+  </div>
+  <div class "field">
+    <%= f.label :picture %><br>
+    <%= f.file_field :picture %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
